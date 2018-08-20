@@ -21,5 +21,8 @@ extension Task {
     @NSManaged public var uid: String?
     @NSManaged public var lastUpdated: Double
     @NSManaged public var isPriority: Bool
+    @NSManaged public var timeDue: Double
+    @NSManaged public var isCompleted: Bool
+    @NSManaged public var tbuser: TBUser?
 
 }

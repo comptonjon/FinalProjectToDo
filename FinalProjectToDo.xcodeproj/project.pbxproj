@@ -29,6 +29,9 @@
 		B1891B5C212A693700D238AD /* PrimarySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B5B212A693700D238AD /* PrimarySplitViewController.swift */; };
 		B1891B5E212A701500D238AD /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B5D212A701500D238AD /* DetailVC.swift */; };
 		B1891B60212A92DA00D238AD /* DateDueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B5F212A92DA00D238AD /* DateDueVC.swift */; };
+		B1891B62212A985B00D238AD /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B61212A985B00D238AD /* TaskCell.swift */; };
+		B1891B65212A9CB000D238AD /* TBUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B63212A9CB000D238AD /* TBUser+CoreDataClass.swift */; };
+		B1891B66212A9CB000D238AD /* TBUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B64212A9CB000D238AD /* TBUser+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		B1891B5B212A693700D238AD /* PrimarySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySplitViewController.swift; sourceTree = "<group>"; };
 		B1891B5D212A701500D238AD /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		B1891B5F212A92DA00D238AD /* DateDueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDueVC.swift; sourceTree = "<group>"; };
+		B1891B61212A985B00D238AD /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		B1891B63212A9CB000D238AD /* TBUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TBUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B1891B64212A9CB000D238AD /* TBUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TBUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB85B516142C9ED6D2FCD11B /* Pods-FinalProjectToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectToDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectToDo/Pods-FinalProjectToDo.release.xcconfig"; sourceTree = "<group>"; };
 		CA6540CE1865F07CD271B80B /* Pods_FinalProjectToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProjectToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0A040AEAAF0D5FFA6FFD91 /* Pods-FinalProjectToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectToDoTests/Pods-FinalProjectToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 				B16661282128F23300526DFF /* Assets.xcassets */,
 				B16661222128F23200526DFF /* Main.storyboard */,
 				B166612A2128F23300526DFF /* LaunchScreen.storyboard */,
+				B1891B61212A985B00D238AD /* TaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +211,8 @@
 		B1891B51212A50D200D238AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B1891B63212A9CB000D238AD /* TBUser+CoreDataClass.swift */,
+				B1891B64212A9CB000D238AD /* TBUser+CoreDataProperties.swift */,
 				B16661252128F23200526DFF /* FinalProjectToDo.xcdatamodeld */,
 				B16661522128F79A00526DFF /* Task+CoreDataProperties.swift */,
 				B16661512128F79A00526DFF /* Task+CoreDataClass.swift */,
@@ -456,6 +465,9 @@
 				B1891B57212A55D500D238AD /* HomeVC.swift in Sources */,
 				B1891B5E212A701500D238AD /* DetailVC.swift in Sources */,
 				B1891B53212A510E00D238AD /* LoginVC.swift in Sources */,
+				B1891B65212A9CB000D238AD /* TBUser+CoreDataClass.swift in Sources */,
+				B1891B62212A985B00D238AD /* TaskCell.swift in Sources */,
+				B1891B66212A9CB000D238AD /* TBUser+CoreDataProperties.swift in Sources */,
 				B16661532128F79A00526DFF /* Task+CoreDataClass.swift in Sources */,
 				B16661542128F79A00526DFF /* Task+CoreDataProperties.swift in Sources */,
 				B16661562128F7C400526DFF /* CDManager.swift in Sources */,

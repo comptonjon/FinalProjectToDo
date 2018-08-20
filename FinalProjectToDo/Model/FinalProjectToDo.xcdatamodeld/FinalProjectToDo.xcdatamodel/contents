@@ -7,8 +7,17 @@
         <attribute name="timeDue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tbuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TBUser" inverseName="tasks" inverseEntity="TBUser" syncable="YES"/>
+    </entity>
+    <entity name="TBUser" representedClassName="TBUser" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasAuthenticated" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="tbuser" inverseEntity="Task" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Task" positionX="-45" positionY="0" width="128" height="135"/>
+        <element name="Task" positionX="-45" positionY="0" width="128" height="150"/>
+        <element name="TBUser" positionX="-45" positionY="45" width="128" height="120"/>
     </elements>
 </model>

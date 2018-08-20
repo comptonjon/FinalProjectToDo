@@ -41,6 +41,9 @@ class MasterVC: UIViewController {
         }
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 140
+        tableView.layer.borderWidth = 2
+        
     }
     
     @objc func unwindFunction() {
@@ -158,8 +161,8 @@ extension MasterVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = tasks[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TaskCell
+        cell.titleLabel.text = tasks[indexPath.row].title
         return cell
     }
 }
