@@ -21,6 +21,7 @@ class MasterVC: UIViewController {
     var changeHandle: DatabaseHandle!
     
     var tasks = [Task]()
+    var selectedTask: Task!
     
     let context = CDManager.shared.context()
 
@@ -28,7 +29,10 @@ class MasterVC: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(unwindFunction))
+        let prioritySort = NSSortDescriptor(key: "isPriority", ascending: false)
+        let nameSort = NSSortDescriptor(key: "title", ascending: false)
         let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
+        fetchRequest.sortDescriptors = [prioritySort, nameSort]
         do {
             let results = try context.fetch(fetchRequest) as [Task]
             tasks = results
@@ -60,9 +64,11 @@ class MasterVC: UIViewController {
             if self.tasks.filter({$0.uid! == key}).isEmpty {
                 let value = snapshot.value as! [String: Any]
                 let title = value["title"] as! String
+                let isPriority = value["isPriority"] as! Bool
                 let newTask = Task(context: self.context)
                 newTask.title = title
                 newTask.uid = key
+                newTask.isPriority = isPriority
                 newTask.lastUpdated = value["lastUpdated"] as! Double
                 CDManager.shared.saveContext()
                 self.tasks.append(newTask)
@@ -94,6 +100,7 @@ class MasterVC: UIViewController {
             if let task = self.tasks.filter({ $0.uid! == key }).first {
                 if task.lastUpdated < lastUpdated {
                     task.title = (value["title"] as! String)
+                    task.isPriority = value["isPriority"] as! Bool
                     task.lastUpdated = (value["lastUpdated"] as! Double)
                     CDManager.shared.saveContext()
                 }
@@ -102,6 +109,8 @@ class MasterVC: UIViewController {
                 }
             }
         })
+        
+        tableView.reloadData()
     }
     
     @IBAction func addTapped(_ sender: Any) {
@@ -117,11 +126,12 @@ class MasterVC: UIViewController {
             let timeCreated = Date().timeIntervalSince1970
             newTask.title = title
             newTask.uid = id
+            newTask.isPriority = false
             newTask.lastUpdated = timeCreated
             CDManager.shared.saveContext()
             self.tasks.append(newTask)
             self.tableView.reloadData()
-            let value : [String : Any] = ["title" : title!, "lastUpdated" : timeCreated]
+            let value : [String : Any] = ["title" : title!, "lastUpdated" : timeCreated, "isPriority" : false]
             self.ref.child("Tasks").child(id).setValue(value)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
@@ -130,6 +140,14 @@ class MasterVC: UIViewController {
         ac.addAction(cancelAction)
         ac.addAction(addAction)
         present(ac, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVCFromTaskVC" {
+            let destinationVC = segue.destination as! DetailVC
+            let indexPath = tableView.indexPathForSelectedRow
+            destinationVC.task = tasks[indexPath!.row]
+        }
     }
 
 }
@@ -160,11 +178,14 @@ extension MasterVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        
         let task = tasks[indexPath.row]
+        let priority = task.isPriority
         task.lastUpdated = Date().timeIntervalSince1970
-        let value : [String:Any] = ["title" : task.title!, "lastUpdated" : task.lastUpdated]
+        let value : [String : Any] = ["title" : task.title!, "lastUpdated" : task.lastUpdated, "isPriority" : priority]
         ref.child("Tasks").child(task.uid!).setValue(value)
         CDManager.shared.saveContext()
+        performSegue(withIdentifier: "toDetailVCFromTaskVC", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

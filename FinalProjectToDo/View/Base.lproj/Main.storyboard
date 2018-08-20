@@ -29,9 +29,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="pUN-jF-pUy" kind="showDetail" id="VN0-Cy-IUF"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -55,6 +52,7 @@
                     <connections>
                         <outlet property="tableView" destination="jQ6-kH-bVp" id="oRi-v8-acI"/>
                         <segue destination="5I3-N6-tYq" kind="unwind" identifier="unwindToHomeVC" unwindAction="unwindToHomeVCWithSegue:" id="pVJ-j3-oIV"/>
+                        <segue destination="pUN-jF-pUy" kind="showDetail" identifier="toDetailVCFromTaskVC" id="duK-SD-glu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -80,34 +78,128 @@
             </objects>
             <point key="canvasLocation" x="1356" y="287.40629685157421"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="9AF-vr-8fb">
             <objects>
-                <viewController id="pUN-jF-pUy" sceneMemberID="viewController">
+                <viewController id="pUN-jF-pUy" customClass="DetailVC" customModule="FinalProjectToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e8I-aZ-Ift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnn-Z8-MRV">
-                                <rect key="frame" x="16" y="314" width="343" height="39"/>
+                                <rect key="frame" x="16" y="109" width="343" height="39"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-B7-adg">
+                                <rect key="frame" x="308" y="172" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idc-s5-98r">
+                                <rect key="frame" x="106" y="313" width="162" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Change Due Date">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8Wk-fn-vXL" kind="show" id="tZi-Mj-Sav"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="centerX" secondItem="e8I-aZ-Ift" secondAttribute="centerX" id="A4t-69-0Xp"/>
-                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="centerY" secondItem="e8I-aZ-Ift" secondAttribute="centerY" id="KKT-l7-IMJ"/>
-                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="leading" secondItem="Sil-wV-0Qe" secondAttribute="leading" constant="16" id="g4Q-ul-fUC"/>
-                            <constraint firstItem="Sil-wV-0Qe" firstAttribute="trailing" secondItem="nnn-Z8-MRV" secondAttribute="trailing" constant="16" id="uXf-dz-HCb"/>
+                            <constraint firstItem="Idc-s5-98r" firstAttribute="centerY" secondItem="e8I-aZ-Ift" secondAttribute="centerY" id="0ZF-o5-fi9"/>
+                            <constraint firstItem="Sil-wV-0Qe" firstAttribute="trailing" secondItem="nnn-Z8-MRV" secondAttribute="trailing" constant="16" id="H3L-RU-bs5"/>
+                            <constraint firstItem="Idc-s5-98r" firstAttribute="centerX" secondItem="e8I-aZ-Ift" secondAttribute="centerX" id="P68-DK-uLm"/>
+                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="top" secondItem="Sil-wV-0Qe" secondAttribute="top" constant="45" id="Vgn-Ra-BVJ"/>
+                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="leading" secondItem="Sil-wV-0Qe" secondAttribute="leading" constant="16" id="de0-v3-gJM"/>
+                            <constraint firstItem="Sil-wV-0Qe" firstAttribute="trailing" secondItem="fCw-B7-adg" secondAttribute="trailing" constant="18" id="oX1-OE-etb"/>
+                            <constraint firstItem="fCw-B7-adg" firstAttribute="top" secondItem="nnn-Z8-MRV" secondAttribute="bottom" constant="24" id="qHF-eW-PhB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sil-wV-0Qe"/>
                     </view>
+                    <connections>
+                        <outlet property="isPriority" destination="fCw-B7-adg" id="f9J-lb-4Zs"/>
+                        <outlet property="label" destination="nnn-Z8-MRV" id="xKT-ie-EBZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ko9-Nk-4HI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1356" y="1106"/>
+        </scene>
+        <!--Date DueVC-->
+        <scene sceneID="QHx-6F-PgL">
+            <objects>
+                <viewController id="8Wk-fn-vXL" customClass="DateDueVC" customModule="FinalProjectToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WMM-qE-Cm8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-fb-S3Q">
+                                <rect key="frame" x="16" y="174" width="343" height="161"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="161" id="CVS-jY-Xju"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="556437753.720312">
+                                    <!--2018-08-20 06:02:33 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6kG-gE-TvP">
+                                <rect key="frame" x="16" y="360" width="343" height="162"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="CR6-hs-ZRz"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="556437757.40714705">
+                                    <!--2018-08-20 06:02:37 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Date and Time Due" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdi-mM-ils">
+                                <rect key="frame" x="16" y="109" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ej9-RA-1uf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="29"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bT4-vl-WF9">
+                                <rect key="frame" x="164" y="579" width="47" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="4SU-od-ZGg"/>
+                                    <constraint firstAttribute="height" constant="43" id="TLe-18-t9B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6kG-gE-TvP" firstAttribute="top" secondItem="2gR-fb-S3Q" secondAttribute="bottom" constant="25" id="BCQ-3P-6Md"/>
+                            <constraint firstItem="C6C-4k-7KS" firstAttribute="trailing" secondItem="2gR-fb-S3Q" secondAttribute="trailing" constant="16" id="DMs-8i-tkZ"/>
+                            <constraint firstItem="2gR-fb-S3Q" firstAttribute="leading" secondItem="C6C-4k-7KS" secondAttribute="leading" constant="16" id="HNR-bY-TUC"/>
+                            <constraint firstItem="C6C-4k-7KS" firstAttribute="trailing" secondItem="6kG-gE-TvP" secondAttribute="trailing" constant="16" id="MNn-56-wiB"/>
+                            <constraint firstItem="Pdi-mM-ils" firstAttribute="top" secondItem="C6C-4k-7KS" secondAttribute="top" constant="45" id="SCS-PY-7k6"/>
+                            <constraint firstItem="Pdi-mM-ils" firstAttribute="leading" secondItem="C6C-4k-7KS" secondAttribute="leading" constant="16" id="TIZ-R7-M21"/>
+                            <constraint firstItem="2gR-fb-S3Q" firstAttribute="top" secondItem="Pdi-mM-ils" secondAttribute="bottom" constant="25" id="Vkm-qN-yji"/>
+                            <constraint firstItem="6kG-gE-TvP" firstAttribute="leading" secondItem="C6C-4k-7KS" secondAttribute="leading" constant="16" id="a5v-qW-4Lx"/>
+                            <constraint firstItem="C6C-4k-7KS" firstAttribute="bottom" secondItem="bT4-vl-WF9" secondAttribute="bottom" constant="45" id="aLj-DI-5sm"/>
+                            <constraint firstItem="C6C-4k-7KS" firstAttribute="trailing" secondItem="Pdi-mM-ils" secondAttribute="trailing" constant="16" id="o6l-Te-Zhr"/>
+                            <constraint firstItem="bT4-vl-WF9" firstAttribute="centerX" secondItem="WMM-qE-Cm8" secondAttribute="centerX" id="tSU-Es-jY5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C6C-4k-7KS"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="2gR-fb-S3Q" id="HVV-lg-b1Q"/>
+                        <outlet property="timePicker" destination="6kG-gE-TvP" id="rBb-bs-hgA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMZ-tv-fOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2184.8000000000002" y="1114.992503748126"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="DFi-sJ-ziG">
@@ -407,6 +499,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="nz9-bw-ZRo"/>
-        <segue reference="F5I-Fj-ZcD"/>
+        <segue reference="duK-SD-glu"/>
     </inferredMetricsTieBreakers>
 </document>

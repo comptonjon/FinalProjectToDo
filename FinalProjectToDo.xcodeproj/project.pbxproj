@@ -28,6 +28,7 @@
 		B1891B5A212A63B300D238AD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B59212A63B300D238AD /* UserManager.swift */; };
 		B1891B5C212A693700D238AD /* PrimarySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B5B212A693700D238AD /* PrimarySplitViewController.swift */; };
 		B1891B5E212A701500D238AD /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B5D212A701500D238AD /* DetailVC.swift */; };
+		B1891B60212A92DA00D238AD /* DateDueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B5F212A92DA00D238AD /* DateDueVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		B1891B59212A63B300D238AD /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		B1891B5B212A693700D238AD /* PrimarySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySplitViewController.swift; sourceTree = "<group>"; };
 		B1891B5D212A701500D238AD /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		B1891B5F212A92DA00D238AD /* DateDueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDueVC.swift; sourceTree = "<group>"; };
 		BB85B516142C9ED6D2FCD11B /* Pods-FinalProjectToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectToDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectToDo/Pods-FinalProjectToDo.release.xcconfig"; sourceTree = "<group>"; };
 		CA6540CE1865F07CD271B80B /* Pods_FinalProjectToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProjectToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0A040AEAAF0D5FFA6FFD91 /* Pods-FinalProjectToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectToDoTests/Pods-FinalProjectToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				B16661202128F23200526DFF /* MasterVC.swift */,
 				B1891B5D212A701500D238AD /* DetailVC.swift */,
 				B1891B5B212A693700D238AD /* PrimarySplitViewController.swift */,
+				B1891B5F212A92DA00D238AD /* DateDueVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1891B55212A511C00D238AD /* SignUpVC.swift in Sources */,
+				B1891B60212A92DA00D238AD /* DateDueVC.swift in Sources */,
 				B1891B5C212A693700D238AD /* PrimarySplitViewController.swift in Sources */,
 				B16661212128F23200526DFF /* MasterVC.swift in Sources */,
 				B16661272128F23200526DFF /* FinalProjectToDo.xcdatamodeld in Sources */,
