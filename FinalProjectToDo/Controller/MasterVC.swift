@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MasterVC.swift
 //  FinalProjectToDo
 //
 //  Created by Jonathan Compton on 8/18/18.
@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import FirebaseDatabase
+import FirebaseAuth
 
-class ViewController: UIViewController {
+class MasterVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,8 +40,17 @@ class ViewController: UIViewController {
     }
     
     @objc func unwindFunction() {
-        performSegue(withIdentifier: "unwindToHomeVC", sender: self)
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            UserManager.shared.loggedIn = false
+            performSegue(withIdentifier: "unwindToHomeVC", sender: self)
+        } catch let signOutError as NSError {
+            print ("Error signing out: \(signOutError)")
+        }
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -124,7 +134,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDataSource {
+extension MasterVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -136,7 +146,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension MasterVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = tasks[indexPath.row]

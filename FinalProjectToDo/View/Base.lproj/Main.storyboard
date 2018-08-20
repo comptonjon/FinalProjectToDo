@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MasterVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FinalProjectToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MasterVC" customModule="FinalProjectToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,13 +87,27 @@
                     <view key="view" contentMode="scaleToFill" id="e8I-aZ-Ift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnn-Z8-MRV">
+                                <rect key="frame" x="16" y="314" width="343" height="39"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="centerX" secondItem="e8I-aZ-Ift" secondAttribute="centerX" id="A4t-69-0Xp"/>
+                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="centerY" secondItem="e8I-aZ-Ift" secondAttribute="centerY" id="KKT-l7-IMJ"/>
+                            <constraint firstItem="nnn-Z8-MRV" firstAttribute="leading" secondItem="Sil-wV-0Qe" secondAttribute="leading" constant="16" id="g4Q-ul-fUC"/>
+                            <constraint firstItem="Sil-wV-0Qe" firstAttribute="trailing" secondItem="nnn-Z8-MRV" secondAttribute="trailing" constant="16" id="uXf-dz-HCb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sil-wV-0Qe"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ko9-Nk-4HI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="992"/>
+            <point key="canvasLocation" x="1356" y="1106"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="DFi-sJ-ziG">
@@ -247,6 +261,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpTapped:" destination="q08-LT-2nu" eventType="touchUpInside" id="82x-fz-RZM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -273,6 +290,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lLK-8Y-gek"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="mLy-xJ-VDx" id="xkS-0Z-6xg"/>
+                        <outlet property="emailTextField" destination="evE-CM-nsK" id="sD3-rN-EVC"/>
+                        <outlet property="nameTextField" destination="wNM-mZ-s1D" id="qQF-mM-pEB"/>
+                        <outlet property="passwordTextField" destination="V2Y-FG-ooi" id="bPl-Pq-FnY"/>
+                        <segue destination="a4W-eF-PpQ" kind="show" identifier="signUpVCtoTasksVC" id="sfm-i4-CcX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuw-1p-TJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -320,6 +344,9 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginTapped:" destination="7Bd-0A-6Pb" eventType="touchUpInside" id="EMd-Sr-APZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nym-8T-obz">
                                 <rect key="frame" x="155" y="581" width="65" height="41"/>
@@ -354,15 +381,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AfX-Ot-nTo"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="SAb-Xa-WQI" id="K7O-Oj-d77"/>
+                        <outlet property="passwordTextField" destination="TlD-Gu-ikc" id="A0p-nx-6Fz"/>
+                        <segue destination="a4W-eF-PpQ" kind="show" identifier="toTasksVCFromLoginVC" id="nz9-bw-ZRo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJO-An-dcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-615.20000000000005" y="172.26386806596702"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Primary Split View Controller-->
         <scene sceneID="J3h-gf-xa8">
             <objects>
-                <splitViewController id="a4W-eF-PpQ" sceneMemberID="viewController">
+                <splitViewController id="a4W-eF-PpQ" customClass="PrimarySplitViewController" customModule="FinalProjectToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="pUN-jF-pUy" kind="relationship" relationship="detailViewController" id="F5I-Fj-ZcD"/>
                         <segue destination="mM5-Oh-BF5" kind="relationship" relationship="masterViewController" id="vpx-YQ-cNf"/>
@@ -374,6 +406,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VN0-Cy-IUF"/>
+        <segue reference="nz9-bw-ZRo"/>
+        <segue reference="F5I-Fj-ZcD"/>
     </inferredMetricsTieBreakers>
 </document>
