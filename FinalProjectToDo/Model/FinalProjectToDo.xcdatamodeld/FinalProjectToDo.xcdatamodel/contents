@@ -9,7 +9,7 @@
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="tbuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TBUser" inverseName="tasks" inverseEntity="TBUser" syncable="YES"/>
     </entity>
-    <entity name="TBUser" representedClassName="TBUser" syncable="YES" codeGenerationType="class">
+    <entity name="TBUser" representedClassName="TBUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hasAuthenticated" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>

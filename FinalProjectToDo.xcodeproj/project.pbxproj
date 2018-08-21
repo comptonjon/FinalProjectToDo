@@ -32,6 +32,7 @@
 		B1891B62212A985B00D238AD /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B61212A985B00D238AD /* TaskCell.swift */; };
 		B1891B65212A9CB000D238AD /* TBUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B63212A9CB000D238AD /* TBUser+CoreDataClass.swift */; };
 		B1891B66212A9CB000D238AD /* TBUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891B64212A9CB000D238AD /* TBUser+CoreDataProperties.swift */; };
+		B1891BA4212C7D8600D238AD /* DateDueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1891BA3212C7D8600D238AD /* DateDueDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		B1891B61212A985B00D238AD /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		B1891B63212A9CB000D238AD /* TBUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TBUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1891B64212A9CB000D238AD /* TBUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TBUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1891BA3212C7D8600D238AD /* DateDueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDueDelegate.swift; sourceTree = "<group>"; };
 		BB85B516142C9ED6D2FCD11B /* Pods-FinalProjectToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectToDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectToDo/Pods-FinalProjectToDo.release.xcconfig"; sourceTree = "<group>"; };
 		CA6540CE1865F07CD271B80B /* Pods_FinalProjectToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProjectToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0A040AEAAF0D5FFA6FFD91 /* Pods-FinalProjectToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectToDoTests/Pods-FinalProjectToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				B1891B5D212A701500D238AD /* DetailVC.swift */,
 				B1891B5B212A693700D238AD /* PrimarySplitViewController.swift */,
 				B1891B5F212A92DA00D238AD /* DateDueVC.swift */,
+				B1891BA3212C7D8600D238AD /* DateDueDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				B1891B65212A9CB000D238AD /* TBUser+CoreDataClass.swift in Sources */,
 				B1891B62212A985B00D238AD /* TaskCell.swift in Sources */,
 				B1891B66212A9CB000D238AD /* TBUser+CoreDataProperties.swift in Sources */,
+				B1891BA4212C7D8600D238AD /* DateDueDelegate.swift in Sources */,
 				B16661532128F79A00526DFF /* Task+CoreDataClass.swift in Sources */,
 				B16661542128F79A00526DFF /* Task+CoreDataProperties.swift in Sources */,
 				B16661562128F7C400526DFF /* CDManager.swift in Sources */,

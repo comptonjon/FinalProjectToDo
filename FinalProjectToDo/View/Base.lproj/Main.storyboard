@@ -157,23 +157,36 @@
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8Wk-fn-vXL" kind="show" id="tZi-Mj-Sav"/>
+                                    <segue destination="8Wk-fn-vXL" kind="show" identifier="toDateDueVC" id="tZi-Mj-Sav"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQs-4q-IdS">
+                                <rect key="frame" x="16" y="410" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Stj-ua-yLd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Idc-s5-98r" firstAttribute="centerY" secondItem="e8I-aZ-Ift" secondAttribute="centerY" id="0ZF-o5-fi9"/>
+                            <constraint firstItem="rQs-4q-IdS" firstAttribute="leading" secondItem="Sil-wV-0Qe" secondAttribute="leading" constant="16" id="2ze-R3-cMf"/>
+                            <constraint firstItem="rQs-4q-IdS" firstAttribute="top" secondItem="Idc-s5-98r" secondAttribute="bottom" constant="57" id="Fwn-4v-7d2"/>
                             <constraint firstItem="Sil-wV-0Qe" firstAttribute="trailing" secondItem="nnn-Z8-MRV" secondAttribute="trailing" constant="16" id="H3L-RU-bs5"/>
                             <constraint firstItem="Idc-s5-98r" firstAttribute="centerX" secondItem="e8I-aZ-Ift" secondAttribute="centerX" id="P68-DK-uLm"/>
                             <constraint firstItem="nnn-Z8-MRV" firstAttribute="top" secondItem="Sil-wV-0Qe" secondAttribute="top" constant="45" id="Vgn-Ra-BVJ"/>
                             <constraint firstItem="nnn-Z8-MRV" firstAttribute="leading" secondItem="Sil-wV-0Qe" secondAttribute="leading" constant="16" id="de0-v3-gJM"/>
+                            <constraint firstItem="Sil-wV-0Qe" firstAttribute="trailing" secondItem="rQs-4q-IdS" secondAttribute="trailing" constant="16" id="fhy-wj-QMg"/>
                             <constraint firstItem="Sil-wV-0Qe" firstAttribute="trailing" secondItem="fCw-B7-adg" secondAttribute="trailing" constant="18" id="oX1-OE-etb"/>
                             <constraint firstItem="fCw-B7-adg" firstAttribute="top" secondItem="nnn-Z8-MRV" secondAttribute="bottom" constant="24" id="qHF-eW-PhB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sil-wV-0Qe"/>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="rQs-4q-IdS" id="n83-xZ-ClD"/>
                         <outlet property="isPriority" destination="fCw-B7-adg" id="f9J-lb-4Zs"/>
                         <outlet property="label" destination="nnn-Z8-MRV" id="xKT-ie-EBZ"/>
                     </connections>
@@ -229,6 +242,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="8Wk-fn-vXL" eventType="touchUpInside" id="bhf-0c-vpi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37342202390000001" green="0.83061944889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -254,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMZ-tv-fOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184.8000000000002" y="1114.992503748126"/>
+            <point key="canvasLocation" x="2126" y="1106"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="DFi-sJ-ziG">
